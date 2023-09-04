@@ -1,0 +1,21 @@
+uuid: 314f7782-a4ca-48a6-a03e-ad002f8c72f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - unique_entity_title
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  unique_entity_title:
+    enabled: true
+name: News
+type: news
+description: 'Content type for news items'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,33 @@
+uuid: ed070266-05e4-48c9-aeb8-76381df52584
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+  module:
+    - access_unpublished
+    - node
+    - publishcontent
+    - statistics
+id: editor
+label: Editor
+weight: 5
+is_admin: null
+permissions:
+  - 'access publish content settings'
+  - 'access_unpublished node news'
+  - 'administer statistics'
+  - 'publish any content'
+  - 'publish any node type news'
+  - 'publish editable content'
+  - 'publish editable node type news'
+  - 'publish own node type news'
+  - 'unpublish any content'
+  - 'unpublish any node type news'
+  - 'unpublish editable content'
+  - 'unpublish editable node type news'
+  - 'unpublish own node type news'
+  - 'view all revisions'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view post access counter'

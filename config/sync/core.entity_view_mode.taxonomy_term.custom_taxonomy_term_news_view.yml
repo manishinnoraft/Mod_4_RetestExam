@@ -1,0 +1,10 @@
+uuid: 762a35d7-3472-4613-8979-bc12176c8e40
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.custom_taxonomy_term_news_view
+label: 'Custom Taxonomy Term News View'
+targetEntityType: taxonomy_term
+cache: true

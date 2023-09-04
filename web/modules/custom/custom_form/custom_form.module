@@ -1,0 +1,18 @@
+<?php 
+
+/**
+ * Implements hook_mail().
+ */
+function custom_form_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'admin_mail':
+      $message['subject'] = ('New User Contact Us');
+      $message['body'][] = ('A New User is contactacted us via the Contact Us Form');
+      break;
+
+    case 'user_mail':
+      $message['subject'] = ('Thank you for your submission');
+      $message['body'][] = ('Thank you for Contacting Us. We will contact u soon');
+      break;
+  }
+}
