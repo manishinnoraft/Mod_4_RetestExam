@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.news.field_assign_to_editor
     - field.field.node.news.field_body
+    - field.field.node.news.field_featured
     - field.field.node.news.field_images
+    - field.field.node.news.field_review
     - field.field.node.news.field_tags_news
-    - field.field.node.news.field_views_count
     - node.type.news
   module:
     - user
@@ -22,7 +24,9 @@ content:
     weight: 100
     region: content
 hidden:
+  field_assign_to_editor: true
   field_body: true
+  field_featured: true
   field_images: true
+  field_review: true
   field_tags_news: true
-  field_views_count: true

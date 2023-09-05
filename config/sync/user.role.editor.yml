@@ -6,6 +6,7 @@ dependencies:
     - node.type.news
   module:
     - access_unpublished
+    - field_permissions
     - node
     - publishcontent
     - statistics
@@ -14,20 +15,31 @@ label: Editor
 weight: 5
 is_admin: null
 permissions:
+  - 'access content overview'
   - 'access publish content settings'
   - 'access_unpublished node news'
   - 'administer statistics'
+  - 'create field_featured'
+  - 'create field_review'
+  - 'edit field_featured'
+  - 'edit own field_featured'
+  - 'edit own field_review'
   - 'publish any content'
   - 'publish any node type news'
   - 'publish editable content'
   - 'publish editable node type news'
   - 'publish own node type news'
+  - 'revert news revisions'
   - 'unpublish any content'
   - 'unpublish any node type news'
   - 'unpublish editable content'
   - 'unpublish editable node type news'
   - 'unpublish own node type news'
   - 'view all revisions'
+  - 'view field_featured'
+  - 'view field_review'
   - 'view news revisions'
+  - 'view own field_featured'
+  - 'view own field_review'
   - 'view own unpublished content'
   - 'view post access counter'

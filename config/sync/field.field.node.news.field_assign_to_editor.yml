@@ -1,0 +1,34 @@
+uuid: 90696839-9afc-4359-9f0b-6ff94356eb4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assign_to_editor
+    - node.type.news
+id: node.news.field_assign_to_editor
+field_name: field_assign_to_editor
+entity_type: node
+bundle: news
+label: 'Assign to Editor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        editor: editor
+        content_editor: '0'
+        administrator: '0'
+        reporter: '0'
+    include_anonymous: true
+field_type: entity_reference

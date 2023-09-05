@@ -9,7 +9,7 @@ login:
     redirect_url: ''
     weight: '-10'
   reporter:
-    redirect_url: ''
+    redirect_url: /reporter-dashboard
     weight: '-10'
   editor:
     redirect_url: /editor-dashboard

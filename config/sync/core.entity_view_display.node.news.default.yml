@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.news.field_assign_to_editor
     - field.field.node.news.field_body
+    - field.field.node.news.field_featured
     - field.field.node.news.field_images
+    - field.field.node.news.field_review
     - field.field.node.news.field_tags_news
-    - field.field.node.news.field_views_count
     - node.type.news
   module:
     - image
@@ -17,12 +19,30 @@ targetEntityType: node
 bundle: news
 mode: default
 content:
+  field_assign_to_editor:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
   field_body:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_featured:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_images:
     type: image
@@ -35,6 +55,16 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
+  field_review:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 106
+    region: content
   field_tags_news:
     type: entity_reference_label
     label: above
@@ -42,15 +72,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 104
-    region: content
-  field_views_count:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 105
     region: content
   links:
     settings: {  }

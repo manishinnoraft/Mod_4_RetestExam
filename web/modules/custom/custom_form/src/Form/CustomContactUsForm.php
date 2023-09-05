@@ -37,11 +37,17 @@ class CustomContactUsForm extends FormBase
       '#type' => 'email',
       '#title' => $this->t('Email Address'),
       '#required' => TRUE,
+      '#element_validate' => [
+        [$this, 'validateMail'],
+      ]
     ];
 
     $form['phone'] = [
       '#type' => 'tel',
       '#title' => $this->t('Phone Number'),
+      '#element_validate' => [
+        [$this, 'validatePhone'],
+      ],
     ];
 
     $form['message'] = [
@@ -61,6 +67,7 @@ class CustomContactUsForm extends FormBase
     return $form;
   }
 
+
   /**
    * {@inheritdoc}
    */
@@ -76,17 +83,39 @@ class CustomContactUsForm extends FormBase
     ];
 
     // Sending mail to admin
-    $to = \Drupal::config('system.site')->get('mail'); 
+    $to = \Drupal::config('system.site')->get('mail');
     \Drupal::service('plugin.manager.mail')->mail('custom_form', 'admin_mail', $to, $params);
 
     // Getting value of the user submitted mail
     $user_email = $form_state->getValue('email');
-    
+
     // Sending mail to user
     $params = [];
     \Drupal::service('plugin.manager.mail')->mail('custom_form', 'user_mail', $user_email, $params);
 
     // Form Submission Message.
     \Drupal::messenger()->addMessage($this->t('Thank you for your submission'));
+  }
+
+
+  public function validateMail(array &$element, FormStateInterface $form_state, array &$complete_form)
+  {
+    $email = $form_state->getValue('email');
+    // Email validation conditon
+    if (!\Drupal::service('email.validator')->isValid($email)) {
+      $form_state->setError($element, $this->t('Please enter a valid email address.'));
+    }
+  }
+
+  /**
+   * Phone Number Field Vaildation.
+   */
+  public function validatePhone(array &$element, FormStateInterface $form_state, array &$complete_form)
+  {
+    $phone = $form_state->getValue('phone');
+    // Phone number 10 dight condition
+    if (!preg_match('/^\d{10}$/', $phone)) {
+      $form_state->setError($element, $this->t('please enter a valid mobile number.'));
+    }
   }
 }

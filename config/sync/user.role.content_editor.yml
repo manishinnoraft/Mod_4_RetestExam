@@ -42,7 +42,4 @@ permissions:
   - 'edit own comments'
   - 'edit own page content'
   - 'edit terms in tags'
-  - 'revert all revisions'
-  - 'view all revisions'
-  - 'view own unpublished content'
   - 'view the administration theme'

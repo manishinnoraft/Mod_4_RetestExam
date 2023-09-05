@@ -6,6 +6,7 @@ dependencies:
     - node.type.news
   module:
     - access_unpublished
+    - field_permissions
     - node
     - statistics
 id: reporter
@@ -15,7 +16,14 @@ is_admin: null
 permissions:
   - 'access_unpublished node news'
   - 'administer statistics'
+  - 'create field_assign_to_editor'
   - 'create news content'
   - 'delete own news content'
+  - 'edit own field_assign_to_editor'
   - 'edit own news content'
+  - 'revert news revisions'
+  - 'view all revisions'
+  - 'view news revisions'
+  - 'view own field_assign_to_editor'
+  - 'view own unpublished content'
   - 'view post access counter'
