@@ -1,0 +1,6 @@
+name: "Custom REST API"
+type: module
+package: Custom
+description: "It provides a custom module to fetch data."
+core_version_requirement: ^9 || ^10
+

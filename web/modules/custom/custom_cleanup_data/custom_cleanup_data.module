@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ */
+function custom_cleanup_data_cron()
+{
+    $targetDate = strtotime('-7 Days');
+
+    // Entity query azpi for news content type.
+    $query = \Drupal::entityQuery('node')
+        ->accessCheck(FALSE)
+        ->condition('type', 'news') 
+        ->condition('created', $targetDate, '<');
+
+    $node_id = $query->execute();
+
+    // Looping thourgouh nodes and unfeatured the field if featured.
+    foreach ($node_id as $nid) {
+        $node = \Drupal\node\Entity\Node::load($nid);
+        if ($node) {
+            // Condition for feature enable or not
+            if ($node->get('field_featured')->value) {
+                $node->set('field_featured', 0); 
+                $node->save();
+            }
+        }
+    }
+}

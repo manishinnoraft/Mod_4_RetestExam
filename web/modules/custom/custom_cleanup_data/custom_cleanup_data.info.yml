@@ -1,0 +1,5 @@
+name: Custom Featured Nodes Cleanup
+type: module
+package: custom
+description: "It unfeatured the featured nodes that are 7 days old"
+core_version_requirement: ^9 || ^10

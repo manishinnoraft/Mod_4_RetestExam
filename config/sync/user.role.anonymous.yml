@@ -1,0 +1,27 @@
+uuid: cd1189a0-fdf1-410f-95cb-bc4d996ca4d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - comment
+    - contact
+    - filter
+    - search
+    - statistics
+    - system
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'administer statistics'
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'view post access counter'

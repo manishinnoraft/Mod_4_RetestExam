@@ -1,0 +1,5 @@
+name: "Custom Contact Us Form Module"
+type: module
+package: custom
+description: "This provides the custom contact us form"
+core_version_requirement: ^9 || ^10

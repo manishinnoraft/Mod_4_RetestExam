@@ -1,0 +1,33 @@
+uuid: 520385cd-c112-4352-bb00-df7c1079231f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.add-news-
+  module:
+    - system
+    - user
+  theme:
+    - olivero
+id: addnews
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:add-news-'
+settings:
+  id: 'system_menu_block:add-news-'
+  label: 'Add News '
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      reporter: reporter

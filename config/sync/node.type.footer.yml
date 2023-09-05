@@ -1,0 +1,21 @@
+uuid: fad535c6-9202-47ec-ae6a-2103844a4005
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - unique_entity_title
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  unique_entity_title:
+    enabled: false
+name: Footer
+type: footer
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

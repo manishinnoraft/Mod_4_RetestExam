@@ -1,0 +1,23 @@
+uuid: 12b7d883-ed2a-4876-ad38-542a1c0650c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_review
+    - node.type.news
+id: node.news.field_review
+field_name: field_review
+entity_type: node
+bundle: news
+label: 'Mark as Review'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
